@@ -1,0 +1,22 @@
+package Capitulo_08_Classes_e_Objetos;
+
+import java.util.EnumSet;
+
+public class EnumTest {
+	
+	public static void main(String[] args) {
+		System.out.println("All Books:");
+		
+		// Imprime todos os livros em um Objeto enum Book
+		for (Book book : Book.values()) {
+			System.out.printf("%-10s%-45s%s%n", book, book.getTitle(), book.getCopyrightYear());
+		}
+		System.out.printf("%nDisplay a range of enum constants:%n");
+		
+		// Imprime os primeiros 4 livros
+		for (Book book : EnumSet.range(Book.JHTP, Book.CPPHTP)) {
+			System.out.printf("%-10s%-45s%s%n", book, book.getTitle(), book.getCopyrightYear());
+		} 
+	}
+	
+}
